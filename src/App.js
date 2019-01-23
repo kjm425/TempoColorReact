@@ -14,6 +14,8 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
+            <Route path='/login' component={() => { window.location = 'https://accounts.spotify.com/en/authorize?response_type=token&client_id=5cceeebf0b1e4604acdfb2e7e8a715cd&redirect_uri=http:%2F%2F127.0.0.1:3000%2F&scope=streaming%20user-read-birthdate%20user-read-email%20user-modify-playback-state%20user-read-private&show_dialog=true'; return null;} }/>
+          <Route path='/' component={() => { window.token = window.location.hash.split("=")[1].split("&")[0]; return null}}/>
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <p>
