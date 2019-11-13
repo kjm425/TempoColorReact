@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9508402f-bf0f-4b20-87ae-84929a2922dc" name="Default" comment="added window resize support, added background">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BackPanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BackPanel.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BottomBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BottomBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ColorDot.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ColorDot.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TempoColor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TempoColor.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/BackPanelContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/BackPanelContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/TempoColorContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/TempoColorContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -123,7 +115,7 @@
       <workItem from="1573565184586" duration="118000" />
       <workItem from="1573566655588" duration="127000" />
       <workItem from="1573637349880" duration="1691000" />
-      <workItem from="1573646226870" duration="15016000" />
+      <workItem from="1573646226870" duration="15615000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1548202207326</created>
@@ -160,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573653145722</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added window resize support, added background">
+      <created>1573665550875</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1573665550875</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
