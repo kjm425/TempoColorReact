@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9508402f-bf0f-4b20-87ae-84929a2922dc" name="Default" comment="fixed url">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="9508402f-bf0f-4b20-87ae-84929a2922dc" name="Default" comment="added token refresh">
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TempoColor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TempoColor.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +108,7 @@
       <workItem from="1573565184586" duration="118000" />
       <workItem from="1573566655588" duration="127000" />
       <workItem from="1573637349880" duration="1691000" />
-      <workItem from="1573646226870" duration="18440000" />
+      <workItem from="1573646226870" duration="19255000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1548202207326</created>
@@ -162,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573665923786</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added token refresh">
+      <created>1573669037809</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1573669037809</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +191,7 @@
     <MESSAGE value="changed background, added animation" />
     <MESSAGE value="added window resize support, added background" />
     <MESSAGE value="fixed url" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed url" />
+    <MESSAGE value="added token refresh" />
+    <option name="LAST_COMMIT_MESSAGE" value="added token refresh" />
   </component>
 </project>
