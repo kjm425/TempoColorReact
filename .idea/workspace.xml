@@ -1,23 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9508402f-bf0f-4b20-87ae-84929a2922dc" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/BackPanel.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ColorDot.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/BackPanelContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/DotContainer.js" afterDir="false" />
+    <list default="true" id="9508402f-bf0f-4b20-87ae-84929a2922dc" name="Default" comment="added window resize support, added background">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BottomBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BottomBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TempoColor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TempoColor.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/BottomBarContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/BottomBarContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/TempoColorContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/TempoColorContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,6 +26,11 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Kyle Moynahan &lt;kjm425@drexel.edu&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1TW9A9u0rECedLDsKd0aNb3E5WS" />
@@ -125,7 +115,7 @@
       <workItem from="1573565184586" duration="118000" />
       <workItem from="1573566655588" duration="127000" />
       <workItem from="1573637349880" duration="1691000" />
-      <workItem from="1573646226870" duration="5963000" />
+      <workItem from="1573646226870" duration="6744000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1548202207326</created>
@@ -148,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548693805761</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added window resize support, added background">
+      <created>1573652454688</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1573652454688</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +168,7 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="added spotify sdk" />
     <MESSAGE value="changed background, added animation" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed background, added animation" />
+    <MESSAGE value="added window resize support, added background" />
+    <option name="LAST_COMMIT_MESSAGE" value="added window resize support, added background" />
   </component>
 </project>
