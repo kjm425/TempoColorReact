@@ -8,16 +8,30 @@ class BackPanel extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.colorHistory = nextProps.colorHistory.state;
-    let panels = document.getElementsByClassName("backPanel");
-    for (let i = 0; i < this.colorHistory.length - 1; i++) {
-      console.log(i);
-      anime({
-        targets: panels[9 - i],
-        backgroundColor: this.colorHistory[i + 1],
-        duration: 200,
-        easing: "linear"
-      });
+    let playerState = nextProps.webPlayerInfo;
+    if (playerState && nextProps.colorHistory.state) {
+      this.colorHistory = nextProps.colorHistory.state;
+      let panels = document.getElementsByClassName("backPanel");
+      for (let i = 1; i < this.colorHistory.length; i++) {
+        anime({
+          targets: panels[10 - i],
+          backgroundColor: this.colorHistory[i + 1],
+          duration: 200,
+          easing: "linear"
+        });
+      }
+    } else {
+      for (let i = 0; i < 10; i++) {
+        setTimeout(function() {
+            let panels = document.getElementsByClassName("backPanel");
+          anime({
+            targets: panels[i],
+            backgroundColor: "#000",
+            duration: 300,
+            easing: "linear"
+          });
+        }, 30 * i);
+      }
     }
   }
 

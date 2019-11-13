@@ -28,7 +28,23 @@ class TempoColor extends React.Component {
   componentDidMount() {
     setInterval(easeRandomColor, 2000);
   }
+    componentWillReceiveProps(nextProps) {
+        let playerState = nextProps.webPlayerInfo;
+        if (playerState) {
+            let title = document.getElementsByClassName("TempoColor");
 
+            anime({
+                targets: title,
+                fontSize: "44px",
+                left: "20px",
+                top: "20px",
+                duration: 600,
+                easing: "easeOutExpo"
+            });
+        } else {
+
+        }
+  }
   render() {
     return (
       <div>

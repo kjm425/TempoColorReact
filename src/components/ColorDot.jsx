@@ -71,7 +71,7 @@ function easeRandomColorDot() {
 
 function animatePitch(pitchVector) {
   let dots = document.getElementsByClassName("colorDot");
-  let halfHeight = window.innerHeight / 2
+  let halfHeight = window.innerHeight / 2;
   for (let i = 0; i < dots.length; i++) {
     let leftScalar = Math.floor(11 * (i / dots.length));
     let betweenValueLen = dots.length / 11;
@@ -135,19 +135,28 @@ class ColorDot extends Component {
     super(props);
   }
 
-  componentWillMount() {}
-
-  componentDidMount() {
-    // setInterval(easeRandomColorDot, 1000);
-  }
-
   componentWillReceiveProps(nextProps) {
-    let playerState = nextProps.webPlayerInfo.state;
-    if (playerState != null) {
+    let playerState = nextProps.webPlayerInfo;
+    if (playerState) {
       if (!playerState.paused) {
+          if (nextProps.colorHistory.length>1){
+              let dots = document.getElementsByClassName("colorDot");
+              for (let i = 0; i < dots.length; i++) {
+                  let halfHeight = window.innerHeight / 2;
+                  setTimeout(function() {
+                      anime({
+                          top: halfHeight,
+                          targets: dots[i],
+                          height: 0,
+                          duration: 100,
+                          easing: "linear",
+                          backgroundColor: nextProps.colorHistory[0]
+                      });
+                  }, 3*i);
+              }
+          }
         let posTime = playerState.position;
         let initTime = Date.now();
-        // easeRandomColorDot())
         $.ajax({
           type: "GET",
           url:
@@ -172,7 +181,7 @@ class ColorDot extends Component {
             }
             window.interval = setInterval(
               updateDots,
-              100,
+              150,
               volumeTimes,
               volumes,
               pitchTimes,
@@ -184,7 +193,34 @@ class ColorDot extends Component {
         });
       } else if (window.interval) {
         clearInterval(window.interval);
+          let dots = document.getElementsByClassName("colorDot");
+          for (let i = 0; i < dots.length; i++) {
+              let halfHeight = window.innerHeight / 2;
+              anime({
+                  top: halfHeight,
+                  targets: dots[i],
+                  height: 0,
+                  duration: 500,
+                  easing: "easeInOutSine",
+                  backgroundColor:"#000"
+              });
+          }
       }
+
+    }
+    else{
+        let dots = document.getElementsByClassName("colorDot");
+        for (let i = 0; i < dots.length; i++) {
+            let halfHeight = window.innerHeight / 2;
+            anime({
+                top: halfHeight,
+                targets: dots[i],
+                height: 0,
+                duration: 500,
+                easing: "easeInOutSine",
+                backgroundColor:"#000"
+            });
+        }
     }
   }
 

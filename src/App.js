@@ -36,7 +36,8 @@ class App extends Component {
               component={() => {
                 if (!localStorage.getItem("tempoToken")) {
                   window.location =
-                    "https://accounts.spotify.com/en/authorize?response_type=token&client_id=5cceeebf0b1e4604acdfb2e7e8a715cd&redirect_uri=http:%2F%2Ftempocolor.herokuapp.com%2Ftoken%2F&scope=streaming%20user-read-birthdate%20user-read-email%20user-modify-playback-state%20user-read-private&show_dialog=false";
+                      // tempocolor.herokuapp.com
+                    "https://accounts.spotify.com/en/authorize?response_type=token&client_id=5cceeebf0b1e4604acdfb2e7e8a715cd&redirect_uri=http:%2F%2F127.0.0.1:3000%2Ftoken%2F&scope=streaming%20user-read-birthdate%20user-read-email%20user-modify-playback-state%20user-read-private&show_dialog=false";
                   return null;
                 } else {
                   return <Redirect to="/player" />;

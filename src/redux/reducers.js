@@ -7,7 +7,7 @@ import anime from "animejs";
 
 function webPlayerStatus(state, action) {
   if (typeof state === "undefined") {
-    return null;
+    return false;
   }
   switch (action.type) {
     case "WEB_PLAYER_READY":
@@ -31,12 +31,12 @@ function webPlayerStatus(state, action) {
 }
 
 function webPlayerInfo(state, action) {
-  if (typeof state === "undefined") {
-    return null;
+  if ((typeof state === "undefined")|| (state == null)) {
+    return false;
   }
   switch (action.type) {
     case "WEB_PLAYER_CHANGED":
-      return action;
+      return action.state;
     default:
       return state;
   }

@@ -73,7 +73,7 @@ const styles = theme => ({
 
 function BottomBar(props) {
   const { classes } = props;
-  let playButton = props.webPlayerStatus ? (
+  let playButton = props.webPlayerInfo ? (
     <Fab
       aria-label="Add"
       onClick={() => {
@@ -82,7 +82,7 @@ function BottomBar(props) {
       className={classes.playButton}
     >
       {props.webPlayerInfo ? (
-        props.webPlayerInfo.state.paused ? (
+        props.webPlayerInfo.paused ? (
           <PlayArrowIcon />
         ) : (
           <PauseIcon />
@@ -93,18 +93,18 @@ function BottomBar(props) {
 
   let trackName = props.webPlayerInfo ? (
     <Typography className={classes.songTitle}>
-      {props.webPlayerInfo.state.track_window.current_track.name}
+      {props.webPlayerInfo.track_window.current_track.name}
     </Typography>
   ) : null;
   let artist = props.webPlayerInfo ? (
     <Typography className={classes.artist}>
-      {props.webPlayerInfo.state.track_window.current_track.artists[0].name}
+      {props.webPlayerInfo.track_window.current_track.artists[0].name}
     </Typography>
   ) : null;
   let albumImage = props.webPlayerInfo ? (
     <img
       src={
-        props.webPlayerInfo.state.track_window.current_track.album.images[0].url
+        props.webPlayerInfo.track_window.current_track.album.images[0].url
       }
       alt="album"
       className={classes.albumImage}
@@ -116,7 +116,7 @@ function BottomBar(props) {
       <CssBaseline />
       <AppBar position="fixed" className={classes.bottomBar}>
         <Toolbar className={classes.toolbar}>
-          <Grid container spacing={6}>
+          <Grid container spacing={0}>
             <Grid item xs={6}>
               {trackName}
               {artist}

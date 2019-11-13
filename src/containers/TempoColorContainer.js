@@ -3,7 +3,8 @@ import TempoColor from "../components/TempoColor";
 
 const mapStateToProps = state => {
   return {
-    webPlayerStatus: state.webPlayerStatus
+    webPlayerStatus: state.webPlayerStatus,
+    webPlayerInfo: state.webPlayerInfo
   };
 };
 
