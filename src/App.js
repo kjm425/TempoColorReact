@@ -12,8 +12,8 @@ import BackPanelContainer from "./containers/BackPanelContainer";
 const theme = createMuiTheme({
   palette: { background: { default: "black" }, type: "dark" }
 });
-
 const history = createBrowserHistory();
+console.log();
 // const serport = new SerialPort('COM3', { baudRate: 9600 });
 // serport.on("open", () => {
 //     serport.write('#50#');
@@ -34,14 +34,16 @@ class App extends Component {
             <Route
               path="/"
               component={() => {
-                if (!localStorage.getItem("tempoToken")) {
+                if (!localStorage.getItem("tempoToken")||(localStorage.getItem("tempoTokenExpires")<(Date.now()/1000))) {
+                    console.log("triggered");
+                    localStorage.clear();
                   window.location =
                       // tempocolor.herokuapp.com
                       // 127.0.0.1:3000
-                    "https://accounts.spotify.com/en/authorize?response_type=token&client_id=5cceeebf0b1e4604acdfb2e7e8a715cd&redirect_uri=http:%2F%2Ftempocolor.herokuapp.com%2Ftoken%2F&scope=streaming%20user-read-birthdate%20user-read-email%20user-modify-playback-state%20user-read-private&show_dialog=false";
+                    "https://accounts.spotify.com/en/authorize?response_type=token&client_id=5cceeebf0b1e4604acdfb2e7e8a715cd&redirect_uri=http:%2F%2F127.0.0.1:3000%2Ftoken%2F&scope=streaming%20user-read-birthdate%20user-read-email%20user-modify-playback-state%20user-read-private&show_dialog=false";
                   return null;
                 } else {
-                  return <Redirect to="/player" />;
+                  return null;
                 }
               }}
             />
@@ -54,7 +56,8 @@ class App extends Component {
                     window.location.hash.split("=")[1].split("&")[0]
                   )
                 );
-                return <Redirect to="/player" />;
+                localStorage.setItem("tempoTokenExpires", (Date.now()/1000)+3000);
+                return <Redirect to="/" />;
               }}
             />
           </div>

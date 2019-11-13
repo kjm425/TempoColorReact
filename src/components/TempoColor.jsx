@@ -30,7 +30,7 @@ class TempoColor extends React.Component {
   }
     componentWillReceiveProps(nextProps) {
         let playerState = nextProps.webPlayerInfo;
-        if (playerState) {
+        if (playerState !== null) {
             let title = document.getElementsByClassName("TempoColor");
 
             anime({
@@ -42,7 +42,15 @@ class TempoColor extends React.Component {
                 easing: "easeOutExpo"
             });
         } else {
-
+            let title = document.getElementsByClassName("TempoColor");
+            anime({
+                targets: title,
+                fontSize: "144px",
+                left: window.innerWidth / 4,
+                top: window.innerHeight / 4,
+                duration: 600,
+                easing: "easeOutExpo"
+            });
         }
   }
   render() {
@@ -67,6 +75,7 @@ class TempoColor extends React.Component {
           <span className="colorLetter">o</span>
           <span className="colorLetter">r</span>
         </Typography>
+
       </div>
     );
   }

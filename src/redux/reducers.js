@@ -55,7 +55,6 @@ function colorHistory(state, action) {
       let newColors = state;
       let panels = document.getElementsByClassName("backPanel");
       for (let i = 0; i < newColors.length - 1; i++) {
-        console.log(i);
         anime({
           targets: panels[9 - i],
           backgroundColor: newColors[i + 1],
