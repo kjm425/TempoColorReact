@@ -1,10 +1,10 @@
-import { connect } from 'react-redux';
-import  TempoColor from '../components/TempoColor';
+import { connect } from "react-redux";
+import TempoColor from "../components/TempoColor";
 
 const mapStateToProps = state => {
-    return{
-        webPlayerStatus: state.webPlayerStatus
-    }
+  return {
+    webPlayerStatus: state.webPlayerStatus
+  };
 };
 
-export default connect(mapStateToProps)(TempoColor)
+export default connect(mapStateToProps)(TempoColor);

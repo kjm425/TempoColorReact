@@ -2,8 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
-    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito|Open+Sans|Righteous"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Righteous"
+      rel="stylesheet"
+    />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta
       name="viewport"
@@ -42,53 +48,51 @@
 
     <script>
       window.onload = () => {
-          var store = window.store;
-          var WPstate = document.getElementById("webPlayerStatus");
+        var store = window.store;
+        window.onSpotifyWebPlaybackSDKReady = () => {
+          const token = JSON.parse(localStorage.getItem("tempoToken"));
+          const player = new Spotify.Player({
+            name: "TempoColor",
+            getOAuthToken: cb => {
+              cb(token);
+            }
+          });
+          window.player = player;
 
-          window.onSpotifyWebPlaybackSDKReady = () => {
-              const token = window.token;
-              const player = new Spotify.Player({
-                  name: 'Web Playback SDK Quick Start Player',
-                  getOAuthToken: cb => {
-                      cb(token);
-                  }
-              });
+          // Error handling
+          player.addListener("initialization_error", ({ message }) => {
+            console.error(message);
+          });
+          player.addListener("authentication_error", ({ message }) => {
+            console.error(message);
+          });
+          player.addListener("account_error", ({ message }) => {
+            console.error(message);
+          });
+          player.addListener("playback_error", ({ message }) => {
+            console.error(message);
+          });
 
-              // Error handling
-              player.addListener('initialization_error', ({message}) => {
-                  console.error(message);
-              });
-              player.addListener('authentication_error', ({message}) => {
-                  console.error(message);
-              });
-              player.addListener('account_error', ({message}) => {
-                  console.error(message);
-              });
-              player.addListener('playback_error', ({message}) => {
-                  console.error(message);
-              });
+          // Playback status updates
+          player.addListener("player_state_changed", state => {
+            store.dispatch({ type: "WEB_PLAYER_READY" });
+            store.dispatch({ type: "WEB_PLAYER_CHANGED", state });
+          });
 
-              // Playback status updates
-              player.addListener('player_state_changed', state => {
-                  store.dispatch({type: "WEB_PLAYER_READY"});
-                  console.log(state);
-              });
+          // Ready
+          player.addListener("ready", ({ device_id }) => {
+            console.log("Ready with Device ID", device_id);
+          });
 
-              // Ready
-              player.addListener('ready', ({device_id}) => {
-                  console.log('Ready with Device ID', device_id);
-              });
-
-              // Not Ready
-              player.addListener('not_ready', ({device_id}) => {
-                  console.log('Device ID has gone offline', device_id);
-              });
-
-              // Connect to the player!
-              player.connect();
-          };
-      }
-  </script>
+          // Not Ready
+          player.addListener("not_ready", ({ device_id }) => {
+            console.log("Device ID has gone offline", device_id);
+          });
+          // Connect to the player!
+          player.connect();
+        };
+      };
+    </script>
     <script src="https://sdk.scdn.co/spotify-player.js"></script>
   </body>
 </html>

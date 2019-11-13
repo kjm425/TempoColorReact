@@ -3,7 +3,8 @@ import  BottomBar  from '../components/BottomBar';
 
 const mapStateToProps = state => {
     return{
-        webPlayerStatus: state.webPlayerStatus
+        webPlayerStatus: state.webPlayerStatus,
+        webPlayerInfo: state.webPlayerInfo
     }
 };
 
