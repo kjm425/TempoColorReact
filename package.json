@@ -12,7 +12,7 @@
     "@types/react-redux": "^7.0.0",
     "animejs": "^3.0.1",
     "history": "^4.7.2",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "prop-types": "^15.6.2",
     "radium": "^0.25.1",
     "react": "^16.7.0",
